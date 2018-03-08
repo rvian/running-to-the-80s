@@ -1,33 +1,20 @@
 ﻿using UnityEngine;
 
+// Trigger para finalizar a fase. Chama a UI para o proximo nivel e 
+// desabilita o movimento do jogador.
 public class EndTrigger : MonoBehaviour
 {
-
     private GameController gameController;
     private Movement playerMove;
-    //public Movement player2Move;
-
-    private void Update()
-    {
-        
-        playerMove = FindObjectOfType<Movement>();
-    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" || other.tag == "SecCube")
         {
+            playerMove = other.GetComponent<Movement>();
             playerMove.enabled = false;
             gameController = FindObjectOfType<GameController>();
             gameController.GameWin();
-        }/*
-        else
-        {
-            player2Move.enabled = false;
-            gameController.GameWin();
-        }*/
+        }
     }
 }
-    
-     
-          

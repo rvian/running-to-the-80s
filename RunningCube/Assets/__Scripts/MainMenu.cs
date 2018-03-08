@@ -12,11 +12,8 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene("InfiniteMode");
 
     }
-#if !UNITY_WEBGL
     public void QuitApp()
     {
-        Debug.Log("QUIT");
         Application.Quit();
     }
-#endif
 }
