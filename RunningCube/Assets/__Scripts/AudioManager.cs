@@ -1,18 +1,16 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
-// Faz com que a musica n pare ao recarregar no nivel.
-    
-// BUG: ao trocar de scena, a musica da scena anterior continua a tocar.
+// Mantém a música tocando ao recarregar a cena.
+// BUG: ao trocar de cena, a música da cena anterior continua a tocar.
 
+// TODO: Checar se a cena atual mudou, se sim, destruir esse objeto.
 public class AudioManager : MonoBehaviour
 {
     GameObject musicPlayer;
 
     private void Awake()
     {
-        // TODO: Check if the scene has changed. if true, then destroy this before AudioManager  
-        // from the other scene load.
+        // Singleton.
         musicPlayer = GameObject.FindGameObjectWithTag("GameMusic");
         if (musicPlayer == null)
         {
@@ -20,8 +18,9 @@ public class AudioManager : MonoBehaviour
             musicPlayer = gameObject;
             DontDestroyOnLoad(musicPlayer);
         }
-        else
-        if (musicPlayer != null)
-                Destroy(gameObject);
+        else if (musicPlayer != null)
+        {
+            Destroy(gameObject);
+        }
     }
 }

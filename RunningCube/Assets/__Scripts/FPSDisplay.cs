@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+// Por CatlikeCoding.
 [RequireComponent(typeof(FPSCounter))]
 public class FPSDisplay : MonoBehaviour {
 

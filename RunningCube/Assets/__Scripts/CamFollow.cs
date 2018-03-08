@@ -1,19 +1,31 @@
 ﻿using UnityEngine;
 
-
+// Faz a camera seguir o alvo.
 public class CamFollow : MonoBehaviour
 {
-    public Transform player;
+    // Alvo a ser seguido.
+    Transform player;
     public Vector3 offset;
+
+    private void Start()
+    {
+        // O alvo inicial é o primeiro avatar
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     void Update()
     {
+        // Não está 100%, mas está melhor que antes.
+        if (player == null)
+        {
+            GetSecondTarget();
+        }
+        transform.position = player.position + offset;
+    }
 
-        if (player != null)
-            transform.position = player.position + offset;
-        else if (GameObject.FindGameObjectWithTag("SecCube"))
-            transform.position = GameObject.FindGameObjectWithTag("SecCube").transform.position + offset;
-        
+    void GetSecondTarget()
+    {
+        player = GameObject.FindGameObjectWithTag("SecCube").transform;
     }
 }
 

@@ -1,45 +1,42 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-/*
- * Controle das fases do jogo, pause, gamever, restart, exit etc.
- * */
+
+// Controle das fases do jogo, pause, gameover, restart, exit etc.
 
 public class GameController : MonoBehaviour {
+    
+    // Se o estiver sendo usado no infinite mode, ativar o bool.
+    public bool isInfiniteMode = false;
+    public GameObject gameWinUI;
+    [HideInInspector]
+    public Movement movement;
     bool gameIsOver = false;
 
-    public bool isInfiniteMode = false;
-
-    public GameObject gameWinUI;
-   // public GameObject infiniteWinUI;
-
-
-	public void GameOver()
+    public void GameOver()
     {
-        if (gameIsOver == false && isInfiniteMode == false) //just wanna do this on level mode
+        // Se o modo de jogo for level, reinicia o nivel apos 2 seg.
+        if (gameIsOver == false && isInfiniteMode == false)
         {
             gameIsOver = true;
+            movement.enabled = false;
             Invoke("Restart", 2f);
-        } else if(isInfiniteMode == true)
+        }
+        // Se o modo de jogo for infinito, mostra a UI com o score da partida.
+        else if(gameIsOver == false && isInfiniteMode == true)
         {
             isInfiniteMode = false;
+            movement.enabled = false;
             gameIsOver = true;
             GameWin();
         }
     } 
 
-    public void GameWin() //level pass
+    public void GameWin()
     {
         gameWinUI.SetActive(true);
     }
-
-    /*
-    public void InfiniteWin() //done infinte mode, collided with something.
-    {
-        gameWinUI.SetActive(true);
-    }*/
-
-     public void Restart()
+    
+    public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -47,5 +44,4 @@ public class GameController : MonoBehaviour {
     {
         SceneManager.LoadScene("MainMenu");
     }
-
 }

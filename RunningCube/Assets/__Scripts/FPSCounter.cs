@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+// Por Catlike Coding.
 public class FPSCounter : MonoBehaviour {
 
 	public int frameRange = 60;

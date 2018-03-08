@@ -10,6 +10,13 @@ public class GenereteMapMenu : Editor {
 
         DrawDefaultInspector();
 
-        if (GUILayout.Button("Gerar")) { newLevel.GenerateMap(); }
+        if (GUILayout.Button("Gerar"))
+        {
+            newLevel.GenerateMap();
+        }
+        if (GUILayout.Button("Limpar"))
+        {
+            newLevel.LevelCleaner();
+        }
     }
 }
