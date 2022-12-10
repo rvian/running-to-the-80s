@@ -2,7 +2,13 @@
 v0.1 - protótipo
 
 
-Runner básico.
+# Play
+* https://rvian.itch.io/yacrg
+
+
+# Sobre
+
+Jogo de correr e desviar de obstáculos.
 
 O jogador deve desviar dos obstaculos enquanto se move para frente (automático), ele pode se mover para a esquerda/direita e/ou usar plataformas (outros metodos planejados).
 
@@ -17,13 +23,14 @@ Arte: Planejo deixar o jogo com uma atmosfera no estilo Retrowave, embora minhas
 Som: Trilha sonora sera no estilo Synthwave.
 
 *essa versão não está jogável - preciso consertar o fluxo de cenas e alguns bugs para alcançar o mvp *
+
 TODO: um readme melhor
 
 
 
 
 
-# English
+# About
 
 *v0.1 - prototype*
 
