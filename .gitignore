@@ -39,3 +39,8 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 Thumbs.db
+.vs/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+*.apk
+*.exe
