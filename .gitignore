@@ -3,20 +3,45 @@
 ###
 [Aa]ssets/AssetStoreTools*
 [Bb]uild/
+[Bb]uilds/
 [Ll]ibrary/
 [Ll]ocal[Cc]ache/
+[Ll]ogs/
+[Mm]emory[Cc]aptures/
 [Oo]bj/
+[Rr]ecordings/
 [Tt]emp/
 [Uu]nityGenerated/
+[Uu]ser[Ss]ettings/
 # file on crash reports
 sysinfo.txt
+crashlytics-build.properties
 # Unity3D generated meta files
 *.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+###
+# Build output
+###
+*.apk
+*.aab
+*.exe
+
+###
+# Backups and temporary files
+###
+*.old
+*.tmp
 
 ###
 # VS/MD solution and project files
 ###
 [Ee]xportedObj/
+.vs/
+.vscode/
+.idea/
+.gradle/
 *.booproj
 *.csproj
 *.sln
@@ -26,7 +51,10 @@ sysinfo.txt
 *.user
 *.userprefs
 *.pidb
-.DS_Store
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
 
 ###
 # OS generated
@@ -36,11 +64,6 @@ sysinfo.txt
 ._*
 .Spotlight-V100
 .Trashes
-Icon?
 ehthumbs.db
 Thumbs.db
-.vs/
-[Ll]ogs/
-[Uu]ser[Ss]ettings/
-*.apk
-*.exe
+desktop.ini
